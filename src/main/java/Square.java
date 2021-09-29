@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * TODO FOR HOMEWORK - Square.java
  *      [ ] Correct the setSide method
@@ -30,7 +32,11 @@ public class Square {
      * @param side The Side Length of a square
      */
     public void setSide(double side) {
-        this.side = side;
+
+        if (side > 0)
+            this.side = side;
+        else
+            System.out.println("You must enter a valid value");
     }
 
     /**
@@ -58,12 +64,16 @@ public class Square {
     public static void main(String[] args) {
         Square s = new Square();
 
-        double sideLength = 4;
+        System.out.println("Enter side of Square:");
+        //Capture the user's input
+        Scanner scanner = new Scanner(System.in);
+        //Storing the captured value in a variable
+        double sideLength = scanner.nextDouble();
 
         s.setSide(sideLength);
 
-        double area = 0;
-        double perimeter = 0;
+        double area = s.area();
+        double perimeter = s.perimeter();
 
         System.out.println("A square with side length of " + s.getSide() + " has an area of: " + area);
         System.out.println("A square with side length of " + s.getSide() + " has a perimeter of: " + perimeter);

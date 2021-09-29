@@ -26,7 +26,16 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <threadCount>6</threadCount>
+                    <!--suppress UnresolvedMavenProperty -->
                     <argLine>${argLine}</argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
                 </configuration>
             </plugin>
         </plugins>
